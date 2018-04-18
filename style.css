@@ -1,0 +1,85 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+a{
+	text-decoration: none;
+}
+kbd{
+	border: 1px solid red; 
+	width:4em; 
+	height: 4em;
+	display:inline-block;
+	text-transform: uppercase;  /*字母变为大写*/
+	position: relative;
+}
+kbd > button{
+	position: absolute;
+	right: 0;
+	bottom: 0;
+	display: none;
+}
+kbd:hover > button{
+	display: inline-block;
+
+}
+body{
+	background: rgb(242,242,242);  
+	/* background:url(./wall.jpg) no-repeat center center; */
+	background-size: cover;    /*图片大小自适应*/
+}
+main{
+	text-align: center;
+	display: flex;
+	justify-content: center;  /*水平右居中*/
+	align-items: center;     /* 垂直居中*/
+	height: 100vh;         /*和窗口一样高*/
+}
+#main1{
+	display: inline-block;
+}
+main > div > div:nth-child(2){
+	margin-left: 15px;
+}
+main > div > div:nth-child(3){
+	margin-left: 15px;
+}
+.key{
+	width: 50px;
+	height: 40px;
+	background: linear-gradient(to bottom, #292929 0%, #111111 100%);
+	border: 1px solid #373737;
+	color: #c5c5c5;
+	border-radius: 7px;
+	box-shadow: 0 0 0 1px #1A1B1C, 0 0 0 2px #1F2020, 0 3px 0 2px #080808;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	font-size: 18px;
+	font-family: Helvetica;
+	position: relative;
+}
+.row{
+	margin: 20px;
+/* 	padding:  */
+
+}
+.row .key{
+	margin: 0 10px;
+	
+}
+.key img{
+	width: 16px;
+	height: 16px;
+	position: absolute;
+	left: 2px;
+	bottom: 1px;
+}
+
+.wrapper {
+    background: rgba(255,255,255,0.3);
+    border-radius: 10px;
+}
+.edit {
+
+}
