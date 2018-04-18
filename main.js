@@ -33,8 +33,8 @@ function init() {
         ["q", "w", "e", "r", "t", "y", "u", "i", "o", "p"],
         ["a", "s", "d", "f", "g", "h", "j", "k", "l"],
         ["z", "x", "c", "v", "b", "n", "m"]
-      ]
-      var hash = {
+    ]
+    var hash = {
         "a": "www.acfun.cn",
         "b": "www.bilibili.com",
         "c": "www.coursera.org",
@@ -61,7 +61,7 @@ function init() {
         "x": "juejin.im",
         "y": "www.youtube.com",
         "z": "zhihu.com"
-      }
+    }
     // 取出 localStorage 中的 zzz 对应的 hash
     var hashInLocalStorage = getFromLocalStorage('zzz')
     if (hashInLocalStorage) {
@@ -93,11 +93,11 @@ function createButton(id) {
     button.textContent = '编辑'
     button.id = id
     button.className = "edit"
-    button.onclick = function (e) {       
+    button.onclick = function (e) {
         var button2 = e.target
-        var img2 = button2.previousSibling   
-        var key = e.target.id    
-        var x = prompt('请设置导航地址')  
+        var img2 = button2.previousSibling
+        var key = e.target.id
+        var x = prompt('请设置导航地址')
         hash[key] = x   //按钮对应的hash的值变为x
         img2.src = 'http://' + x + '/favicon.ico'
         img2.onerror = function (xxx) {
@@ -125,7 +125,7 @@ function createImage(domain) {
 function generateKeyboard(keys, hash) {
     //遍历 keys，生成 kdb 标签
     for (var index = 0; index < keys.length; index = index + 1) {
-        var div1 = tag('div')  
+        var div1 = tag('div')
         div1.className = 'row'
         main1.appendChild(div1)
         var row = keys[index]
@@ -146,11 +146,12 @@ function generateKeyboard(keys, hash) {
 
 function listenToUser(hash) {
     document.onkeyup = function (e) {
-        var key = e.key   
-        var website = hash[key]    
+        var key = e.key
+        var website = hash[key]
         console.log(website)
         //	location.href = 'http://'+website   //把当前地址变为新的网站的地址
-        if(website){
-            window.open('http://' + website, '_blank')  
+        if (website) {
+            window.open('http://' + website, '_blank')
+        }
     }
 }
