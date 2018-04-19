@@ -5,26 +5,53 @@
 a{
 	text-decoration: none;
 }
-kbd{
-	border: 1px solid red; 
-	width:4em; 
-	height: 4em;
-	display:inline-block;
-	text-transform: uppercase;  /*字母变为大写*/
-	position: relative;
-}
 kbd > button{
 	position: absolute;
 	right: 0;
 	bottom: 0;
 	display: none;
 }
-kbd:hover > button{
-	display: inline-block;
-
+.key {
+	font-size: 20px;
+	width: 70px;
+	height: 70px;
+	background: linear-gradient(to bottom, #050505 110%, #111111 100%);
+	border: 1px solid #373737;
+	color: #c5c5c5;
+	border-radius: 7px;
+	box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	font-size: 18px;
+	font-family: Helvetica;
+	position: relative;
+	transition: all .2s linear;
 }
+.key:hover > button{
+	display: inline-block;
+	cursor: pointer;
+	animation: shake 0.82s cubic-bezier(.36,.07,.19,.97) both;
+	transform: translate3d(0, 0, 0);
+	backface-visibility: hidden;
+	perspective: 1000px;
+	}
+@keyframes shake {
+	10%, 90% {
+	  transform: translate3d(-1px, 0, 0);
+	}
+	20%, 80% {
+	  transform: translate3d(2px, 0, 0);
+	}
+	30%, 50%, 70% {
+	  transform: translate3d(-4px, 0, 0);
+	}
+	40%, 60% {
+	  transform: translate3d(4px, 0, 0);
+	}
+  }
 body{
-	background: rgb(242,242,242);  
+	background: #DDDEE0;  
 	/* background:url(./wall.jpg) no-repeat center center; */
 	background-size: cover;    /*图片大小自适应*/
 }
@@ -44,21 +71,6 @@ main > div > div:nth-child(2){
 main > div > div:nth-child(3){
 	margin-left: 15px;
 }
-.key{
-	width: 50px;
-	height: 40px;
-	background: linear-gradient(to bottom, #292929 0%, #111111 100%);
-	border: 1px solid #373737;
-	color: #c5c5c5;
-	border-radius: 7px;
-	box-shadow: 0 0 0 1px #1A1B1C, 0 0 0 2px #1F2020, 0 3px 0 2px #080808;
-	display: inline-flex;
-	align-items: center;
-	justify-content: center;
-	font-size: 18px;
-	font-family: Helvetica;
-	position: relative;
-}
 .row{
 	margin: 20px;
 /* 	padding:  */
@@ -69,17 +81,31 @@ main > div > div:nth-child(3){
 	
 }
 .key img{
-	width: 16px;
-	height: 16px;
+	width: 20px;
+	height: 20px;
 	position: absolute;
 	left: 2px;
 	bottom: 1px;
 }
 
 .wrapper {
-    background: rgba(255,255,255,0.3);
+    /* background: rgba(255,255,255,0.3); */
     border-radius: 10px;
 }
 .edit {
-
+	position: absolute;
+	width: 20px;
+	height: 20px;
+	background: #F2BE42;
+	border-radius: 4px;
+	cursor: pointer;
+	color: #fff;
+	border:none;
+	top:0px;
+	left: 50px;
+}
+.text{
+	font-family: Georgia;
+	font-weight: 600;
+	font-size: 24px;
 }

@@ -90,7 +90,7 @@ function createSpan(textContent) {
 
 function createButton(id) {
     var button = tag('button')
-    button.textContent = '编辑'
+    button.textContent = 'E'
     button.id = id
     button.className = "edit"
     button.onclick = function (e) {
@@ -147,10 +147,13 @@ function generateKeyboard(keys, hash) {
 function listenToUser(hash) {
     document.onkeyup = function (e) {
         var key = e.key
+        console.log(key)
         var website = hash[key]
         console.log(website)
         //	location.href = 'http://'+website   //把当前地址变为新的网站的地址
-        if (website) {
+        if (13===e.which) {
+            console.log('2333')
+        } else if (website) {
             window.open('http://' + website, '_blank')
         }
     }
